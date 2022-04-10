@@ -1,35 +1,21 @@
 import React from "react";
-import { useQuery, gql } from "@apollo/client";
 import "./list.css";
 import Card from "./Card";
+import { useCharacter } from "../hooks/useCharacter";
 //graphql Schema
-const GET_CHARACTER = gql`
-  query {
-    characters {
-      results {
-        id
-        name
-        image
-        gender
-      }
-    }
-  }
-`;
 
 const List = () => {
   //if we use useQuery hook
   //eg const obj = useQuery(GET_CHAR);
   //we get obj.error,obj.loading,obj.data
   //ie loader ,error,data
-
-  const { error, loading, data } = useQuery(GET_CHARACTER);
+  const { error, loading, data } = useCharacter();
   const elm = data?.characters.results;
-  console.log(elm);
 
   if (loading) {
     return (
       <div className="main">
-        <h3>Loading</h3>;
+        <h3>Loading....</h3>;
       </div>
     );
   }
