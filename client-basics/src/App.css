@@ -1,0 +1,13 @@
+
+.head{
+  font-family:sans-serif;
+  color: rgba(0, 0, 0, 0.849);
+  display:flex;
+  justify-content:center;
+}
+h1{
+  
+  font-size:52px;
+  margin-bottom: -10px;
+}
+
