@@ -11,7 +11,6 @@ const List = () => {
   //ie loader ,error,data
   const { error, loading, data } = useCharacter();
   const elm = data?.characters.results;
-
   if (loading) {
     return (
       <div className="main">
@@ -29,7 +28,7 @@ const List = () => {
   return (
     <div className="main">
       {elm.map((el) => (
-        <Card image={el.image} name={el.name} />
+        <Card image={el.image} name={el.name} id={el.id} />
       ))}
     </div>
   );
